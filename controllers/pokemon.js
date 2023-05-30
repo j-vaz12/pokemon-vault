@@ -6,6 +6,12 @@ module.exports = {
     create,
     index,
     delete: deleteOne,
+    getAll,
+}
+
+async function getAll(req, res) {
+    const pokemon = await fetch(`${baseUrl}/pokemon?limit=151`).then(res => res.json());
+    res.render('pokemon/allPokeIndex', { pokemon })
 }
 
 async function deleteOne(req, res) {
