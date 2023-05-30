@@ -10,7 +10,8 @@ module.exports = {
 }
 
 async function getAll(req, res) {
-    const pokemon = await fetch(`${baseUrl}/pokemon?limit=151`).then(res => res.json());
+    const pokemon = await fetch(`${baseUrl}/pokemon?limit=151`).then(res => res.json()); 
+    console.log(pokemon)
     res.render('pokemon/allPokeIndex', { pokemon })
 }
 

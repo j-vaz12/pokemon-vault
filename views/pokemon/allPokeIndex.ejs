@@ -1,3 +1,11 @@
 <%- include('../partials/header') %>
+<% pokemon.results.forEach(function(pokemon, idx) { %>
+    <div><%= pokemon.name%></div>
+    <div>
+       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= idx %>.png" alt="Pic"> 
+    </div>
+
+<% }); %>
+
 
 <%- include('../partials/footer') %>
