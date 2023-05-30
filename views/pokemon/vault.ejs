@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+<div>
+    <% pokemon.forEach(function(p) { %>
+        <div><%= p.name %></div>
+        <div><%= p.img %></div>
+        <div><%= p.type %></div>
+    <% }); %>
+</div>
+
+<%- include('../partials/footer') %>

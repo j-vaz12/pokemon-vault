@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+
+<form action="/pokemon/search" method="GET">
+<input type="text" name="pokemon">
+<button>search</button>
+</form>
+
+<% if (pokemon) { %>
+    <form action="/pokemon" method="POST">
+        <div>
+            <%= pokemon.species.name %>
+            <input type="hidden" name="name" value=" <%=pokemon.species.name %>" />
+            <input type="hidden" name="pokemonID" value=" <%=pokemon.id %>" />
+            <input type="hidden" name="img" value=" <%=pokemon.sprites.other['official-artwork'].front_default %>" />
+            <input type="hidden" name="type" value=" <%=pokemon.types[0].type.name %>" />
+            <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pokemon">
+        </div>
+        <button>Add To Vault</button>
+    </form>
+<% } else { %>
+    <p>pokemon not found</p>
+<% } %>
+<%- include('../partials/footer') %>
+
