@@ -1,25 +1,17 @@
 <%- include('../partials/header') %>
+<div>
 
-
-<form action="/pokemon/search" method="GET">
-<input type="text" name="pokemon">
-<button>search</button>
-</form>
-
-<% if (pokemon) { %>
-    <form action="/pokemon" method="POST">
+    <% pokemon.forEach(function(p) { %>
+        <div><%= p.name %></div>
         <div>
-            <%= pokemon.species.name %>
-            <input type="hidden" name="name" value=" <%=pokemon.species.name %>" />
-            <input type="hidden" name="pokemonID" value=" <%=pokemon.id %>" />
-            <input type="hidden" name="img" value=" <%=pokemon.sprites.other['official-artwork'].front_default %>" />
-            <input type="hidden" name="type" value=" <%=pokemon.types[0].type.name %>" />
-            <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pokemon">
+           <img src="<%= p.img %>" alt="Pic"> 
         </div>
-        <button>Add To Vault</button>
-    </form>
-<% } else { %>
-    <p>pokemon not found</p>
-<% } %>
-<%- include('../partials/footer') %>
+        <div><%= p.type %></div>
+        <form action="/pokemon/<%= p._id %>?_method=DELETE" method="POST"> 
+            <button>Remove</button>
+        </form>
+    <% }); %>
+</div>
+<h3>efefe</h3>
 
+<%- include('../partials/footer') %>

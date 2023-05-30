@@ -4,6 +4,7 @@ const pokemonCtrl = require('../controllers/pokemon');
 
 router.get('/search', pokemonCtrl.getPokemon);
 router.post('/', pokemonCtrl.create);
-router.get('/:id/vault', pokemonCtrl.index)
+router.get('/', pokemonCtrl.index);
+router.delete('/:id', pokemonCtrl.delete);
 
 module.exports = router;

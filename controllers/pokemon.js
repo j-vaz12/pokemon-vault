@@ -5,35 +5,44 @@ module.exports = {
     getPokemon,
     create,
     index,
+    delete: deleteOne,
+}
+
+async function deleteOne(req, res) {
+    let pokemon = await Pokemon.findOne({_id: req.params.id});
+    console.log(pokemon)
+    pokemon.vault.remove(req.user._id)
+    console.log('removed', pokemon)
+    await pokemon.save();
+    res.redirect(`/pokemon`)
 }
 
 async function index(req, res) {
    pokemon = await Pokemon.find({vault: req.user._id});
-    res.render('pokemon/vault', { pokemon });
+    res.render('pokemon/index', { pokemon });
 }
 async function getPokemon(req, res) {
     try {
         const pokemon = await fetch(`${baseUrl}/pokemon/${req.query.pokemon}`).then(res => res.json());
         // console.log(pokemon)
-        res.render('pokemon/index', {pokemon});
+        res.render('pokemon/search', {pokemon});
     } catch (err) {
         console.log('err')
-        res.render('pokemon/index', {pokemon: null,});
+        res.render('pokemon/search', {pokemon: null,});
     }
 }
 
 async function create(req, res) {
     // console.log(req.body)
     
-    let pokemon = await Pokemon.exists({pokemonID: req.body.pokemonID});
-    console.log('pokemon', pokemon)
+    // let pokemon = await Pokemon.exists({pokemonID: req.body.pokemonID});
+    let pokemon = await Pokemon.findOne({pokemonID: req.body.pokemonID})
+    // console.log('pokemon', pokemon)
      if (pokemon) {
         console.log('already exists')
-        let poke = await Pokemon.findById(pokemon._id)
-        console.log(poke)
-        if (!poke.vault.includes(req.user._id)) {
-            poke.vault.push(req.user._id);
-            await poke.save();
+        if (!pokemon.vault.includes(req.user._id)) {
+            pokemon.vault.push(req.user._id);
+            await pokemon.save();
         }
     } else {
         console.log('adding new pokemon' )
@@ -42,7 +51,7 @@ async function create(req, res) {
         await pokemon.save();
         pokemon.vault.push(req.user_id);
     }
-    res.redirect(`/pokemon/${req.user._id}/vault`)
+    res.redirect(`/pokemon`)
     // res.redirect(`/pokemon/${req.body.vault.user_id}`)
     // res.redirect(`/pokemon/${req.user._id}`)
     console.log(pokemon)
