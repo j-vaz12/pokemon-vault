@@ -1,22 +1,52 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
 body {
   /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100vh;
   /* display: grid; */
-  /* grid-template-rows: repeat(2, 1fr); */
+  /* grid-template-rows: 50px 1fr 30px ; */
   margin: 0;
 }
 .not-a-user {
   height: 100vh;
-  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/11/Epic-Pokemon-Wallpapers-HD-For-Desktop.jpg);
+  background-image: url(https://images.alphacoders.com/472/47271.jpg);
   background-size: cover;
   margin: 0;
+  display: grid;
+  grid-template-rows: .1fr .1fr 1fr;
   /* background-image: url(https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/02/Pokemon-Fire-Starters-Featured-Image.jpg); */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 #login-page {
   font-size: 50px;
+  color: black;
+  margin: 0;
+  font-size: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+h1 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  /* color: black; */
+  font-size:30px;
+  margin: 0;
+  font-size: 4vmin;
+  /* font-family: 'Comic Neue', cursive; */
   color: red;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #FF0000,
+      0 0 82px #FF0000,
+      0 0 92px #FF0000,
+      0 0 102px #FF0000,
+      0 0 151px #FF0000;
 }
 
 a {
@@ -32,8 +62,11 @@ a {
   justify-content: center;
   align-items: center;
   height: 34px;
+  grid-row-end: 3;
   /* grid-row-end: 3; */
 }
-p {
+/* p {
   font-size: 20px;
-}
+  padding-left: 30px;
+  padding-right: 30px;
+} */
