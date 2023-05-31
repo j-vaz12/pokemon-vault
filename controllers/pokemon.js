@@ -10,10 +10,12 @@ module.exports = {
 }
 
 async function getAll(req, res) {
-    const pokemon = await fetch(`${baseUrl}/pokemon?limit=151`).then(res => res.json()); 
-    console.log(pokemon)
+    const pokemonStatus = await fetch(`${baseUrl}/pokemon?limit=151`).then(res => res.json()); 
+    // console.log(pokemon)
+    const pokemon= await Promise.all(pokemonStatus.results.map(p=> fetch(p.url).then(res => res.json())));
     res.render('pokemon/allPokeIndex', { pokemon })
 }
+
 
 async function deleteOne(req, res) {
     let pokemon = await Pokemon.findOne({_id: req.params.id});
@@ -30,7 +32,7 @@ async function index(req, res) {
 }
 async function getPokemon(req, res) {
     try {
-        const pokemon = await fetch(`${baseUrl}/pokemon/${req.query.pokemon}`).then(res => res.json());
+        const pokemon = await fetch(`${baseUrl}/pokemon/${req.query.pokemon.toLowerCase()}`).then(res => res.json());
         // console.log(pokemon)
         res.render('pokemon/search', {pokemon});
     } catch (err) {

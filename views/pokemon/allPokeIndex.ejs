@@ -1,9 +1,20 @@
 <%- include('../partials/header') %>
-<% pokemon.results.forEach(function(pokemon, idx) { %>
-    <div><%= pokemon.name%></div>
-    <div>
-       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= idx %>.png" alt="Pic"> 
-    </div>
+<% pokemon.forEach(function(pokemon, idx) { %>
+    <!-- <div><%= pokemon.name%></div> -->
+
+       <form action="/pokemon" method="POST">
+        <div>
+            <%= pokemon.species.name %>
+            <%= pokemon.types[0].type.name %>
+            <input type="hidden" name="name" value=" <%=pokemon.species.name %>" />
+            <input type="hidden" name="pokemonID" value=" <%=pokemon.id %>" />
+            <input type="hidden" name="img" value=" <%=pokemon.sprites.other['official-artwork'].front_default %>" />
+            <input type="hidden" name="type" value=" <%=pokemon.types[0].type.name %>" />
+            <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pokemon">
+        </div>
+        <button>Add To Vault</button>
+    </form>
+    <!-- </div> -->
 
 <% }); %>
 

@@ -4,7 +4,7 @@
     <% pokemon.forEach(function(p) { %>
         <div><%= p.name %></div>
         <div>
-           <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pic"> 
+           <img src="<%= p.img %>" alt="Pic"> 
         </div>
         <div><%= p.type %></div>
         <form action="/pokemon/<%= p._id %>?_method=DELETE" method="POST"> 
@@ -12,6 +12,6 @@
         </form>
     <% }); %>
 </div>
-
+<h3>efefe</h3>
 
 <%- include('../partials/footer') %>
