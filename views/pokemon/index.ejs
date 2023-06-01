@@ -1,17 +1,24 @@
 <%- include('../partials/header') %>
-<div>
-
-    <% pokemon.forEach(function(p) { %>
-        <div><%= p.name %></div>
-        <div>
-           <img src="<%= p.img %>" alt="Pic"> 
-        </div>
-        <div><%= p.type %></div>
-        <form action="/pokemon/<%= p._id %>?_method=DELETE" method="POST"> 
-            <button>Remove</button>
-        </form>
-    <% }); %>
-</div>
-<h3>efefe</h3>
-
-<%- include('../partials/footer') %>
+    <div>
+        <!-- <h1><%= user.name %></h1> -->
+        <% pokemon.forEach(function(p) { %>
+            <div class="pokemon-container-vault">
+                <div class="poke-name">
+                    <%= p.name %>
+                </div>
+                <div>
+                    <img src="<%= p.img %>" alt="Pic">
+                </div>
+                <div class="poke-type">
+                    <strong>Pokemon Type:</strong>
+                    <%= p.type %>
+                </div>
+            </div>
+            <form action="/pokemon/<%= p._id %>?_method=DELETE" method="POST">
+                <div class="remove-btn-container">
+                    <button class="remove-btn">Remove</button>
+                </div> 
+            </form>
+            <% }); %>
+    </div>
+ <%- include('../partials/footer') %>

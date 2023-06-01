@@ -4,7 +4,7 @@
     <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
 
        <form action="/pokemon" method="POST">
-        <div>
+        <div class="pokemon-container">
             <%= pokemon.species.name %>
             <%= pokemon.types[0].type.name %>
             <input type="hidden" name="name" value=" <%=pokemon.species.name %>" />

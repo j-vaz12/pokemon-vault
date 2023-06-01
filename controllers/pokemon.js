@@ -1,5 +1,5 @@
 const Pokemon = require("../models/pokemon");
-
+const User = require("../models/user");
 const baseUrl = 'https://pokeapi.co/api/v2/';
 module.exports = {
     getPokemon,
@@ -28,6 +28,7 @@ async function deleteOne(req, res) {
 
 async function index(req, res) {
    pokemon = await Pokemon.find({vault: req.user._id});
+//    user = User.name
     res.render('pokemon/index', { pokemon });
 }
 async function getPokemon(req, res) {
