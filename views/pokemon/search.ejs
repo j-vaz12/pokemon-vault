@@ -2,20 +2,24 @@
 
 
 <form action="/pokemon/search" method="GET">
-<input type="text" name="pokemon">
-<button>search</button>
+    <div class="pokemon-search">
+        <input type="text" placeholder="Name or number" class="pokemon-input" name="pokemon">
+        <button class="pokemon-button">
+            <div class="pokemon-icon"></div>
+        </button>
+    </div>
 </form>
 
 <% if (pokemon) { %>
     <form action="/pokemon" method="POST">
         <div>
-            <%= pokemon.species.name %>
-            <%= pokemon.types[0].type.name %>
+          <div class="poke-name"> <%=pokemon.species.name%> </div> 
+          <div class="poke-type"> <%=pokemon.types[0].type.name%> </div>
             <input type="hidden" name="name" value=" <%=pokemon.species.name %>" />
             <input type="hidden" name="pokemonID" value=" <%=pokemon.id %>" />
             <input type="hidden" name="img" value=" <%=pokemon.sprites.other['official-artwork'].front_default %>" />
             <input type="hidden" name="type" value=" <%=pokemon.types[0].type.name %>" />
-            <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pokemon">
+            <img class="poke-img" src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pokemon">
         </div>
         <button>Add To Vault</button>
     </form>

@@ -9,7 +9,9 @@ body {
   display: grid;
   grid-template-rows: .1fr .1fr 1fr;
   margin: 0;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
+  border: 10px solid black;
+
 }
 .not-a-user {
   height: 100vh;
@@ -29,25 +31,18 @@ body {
   padding-left: 30px;
   padding-right: 30px;
 }
+
+
 h1 {
   display: grid;
   align-items: center;
   justify-content: center;
   /* color: black; */
   font-size:30px;
-  margin: 0;
+  /* margin: 0; */
+  margin-top: 120px;
   font-size: 4vmin;
-  /* font-family: 'Comic Neue', cursive; */
-  color: red;
-  text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #FF0000,
-      0 0 82px #FF0000,
-      0 0 92px #FF0000,
-      0 0 102px #FF0000,
-      0 0 151px #FF0000;
+  color: black;
 }
 
 a {
@@ -80,20 +75,139 @@ nav {
   background-color: red;
 }
 
+nav > a:hover {
+  color: white;
+}
+
 nav > a {
   font-size: 20px;
   margin: 10px;
   color: black;
+  text-decoration: none;
 }
 
 nav > a:last-child {
   margin-left: auto;
 }
 
-input {
-  background-color:black;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px;
+.pokemon-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
+  margin-top: 100px;
+}
+
+.pokemon-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  width: 400px; /* Adjust the width as desired */
+  text-align: left; /* Add this line to align text to the left */
+}
+
+.pokemon-button {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.pokemon-icon {
+  background-image: url("https://img.uxwing.com/wp-content/themes/uxwing/download/brands-social-media/pokemon-icon.png"); /* Replace with the URL of your Pokémon image */
+  background-size: contain;
   background-repeat: no-repeat;
-  padding-left: 40px;
+  width: 20px;
+  height: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+  /* height: 100vh; */
+}
+.groudon {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation-name: move;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin-right: 100px;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  51% {
+    transform: translateX(48%);
+  }
+  52% {
+    transform: translateX(52%);
+  }
+  53% {
+    transform: translateX(48%);
+  }
+  54% {
+    transform: translateX(52%);
+  }
+  55% {
+    transform: translateX(48%);
+  }
+  56% {
+    transform: translateX(52%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.kyorge {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation-name: move-reverse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin-left: 100px;
+}
+
+@keyframes move-reverse {
+  0% {
+    transform: translateX(50%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  51% {
+    transform: translateX(-48%);
+  }
+  52% {
+    transform: translateX(-52%);
+  }
+  53% {
+    transform: translateX(-48%);
+  }
+  54% {
+    transform: translateX(-52%);
+  }
+  55% {
+    transform: translateX(-48%);
+  }
+  56% {
+    transform: translateX(-52%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
 }
