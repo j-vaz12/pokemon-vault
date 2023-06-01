@@ -6,9 +6,10 @@ body {
   /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100vh;
-  /* display: grid; */
-  /* grid-template-rows: 50px 1fr 30px ; */
+  display: grid;
+  grid-template-rows: .1fr .1fr 1fr;
   margin: 0;
+  background-color: black;
 }
 .not-a-user {
   height: 100vh;
@@ -70,3 +71,29 @@ a {
   padding-left: 30px;
   padding-right: 30px;
 } */
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  background-color: red;
+}
+
+nav > a {
+  font-size: 20px;
+  margin: 10px;
+  color: black;
+}
+
+nav > a:last-child {
+  margin-left: auto;
+}
+
+input {
+  background-color:black;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}

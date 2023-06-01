@@ -1,7 +1,9 @@
 <%- include('./partials/header') %>
 
-<h2>Pokémon</h2>
+<h1>Search for a Pokémon</h1>
 <form action="/pokemon/search" method="GET">
-<input type="text" name="pokemon">
-<button>search</button>
+<input type="text" placeholder="Search Pokémon" class="pokemon-input" name="pokemon">
+<button class="pokemon-button">
+    <i class="pokemon-icon"></i>
+  </button>
 </form>

@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 <% pokemon.forEach(function(pokemon, idx) { %>
     <!-- <div><%= pokemon.name%></div> -->
+    <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
 
        <form action="/pokemon" method="POST">
         <div>
@@ -10,7 +11,7 @@
             <input type="hidden" name="pokemonID" value=" <%=pokemon.id %>" />
             <input type="hidden" name="img" value=" <%=pokemon.sprites.other['official-artwork'].front_default %>" />
             <input type="hidden" name="type" value=" <%=pokemon.types[0].type.name %>" />
-            <img src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pokemon">
+            <img class="pokeImg" src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pokemon">
         </div>
         <button>Add To Vault</button>
     </form>
