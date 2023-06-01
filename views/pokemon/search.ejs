@@ -12,16 +12,18 @@
 
 <% if (pokemon) { %>
     <form action="/pokemon" method="POST">
-        <div>
+        <div class="pokemon-container">
           <div class="poke-name"> <%=pokemon.species.name%> </div> 
-          <div class="poke-type"> <%=pokemon.types[0].type.name%> </div>
-            <input type="hidden" name="name" value=" <%=pokemon.species.name %>" />
-            <input type="hidden" name="pokemonID" value=" <%=pokemon.id %>" />
-            <input type="hidden" name="img" value=" <%=pokemon.sprites.other['official-artwork'].front_default %>" />
-            <input type="hidden" name="type" value=" <%=pokemon.types[0].type.name %>" />
-            <img class="poke-img" src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pokemon">
+          <input type="hidden" name="name" value=" <%=pokemon.species.name %>" />
+          <input type="hidden" name="pokemonID" value=" <%=pokemon.id %>" />
+          <input type="hidden" name="img" value=" <%=pokemon.sprites.other['official-artwork'].front_default %>" />
+          <input type="hidden" name="type" value=" <%=pokemon.types[0].type.name %>" />
+          <img class="poke-img" src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pokemon">
+          <div class="poke-type"> 
+           <strong>Pokemon Type:</strong>
+            <%=pokemon.types[0].type.name%> </div>
         </div>
-        <button>Add To Vault</button>
+        <button class="vault-btn">Add To Vault</button>
     </form>
 <% } else { %>
     <p>pokemon not found</p>

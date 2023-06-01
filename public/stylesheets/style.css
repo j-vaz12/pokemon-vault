@@ -211,3 +211,28 @@ nav > a:last-child {
     transform: translateX(50%);
   }
 }
+
+.pokemon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.poke-name {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: large;
+}
+
+.poke-type {
+  font-size: large;
+}
+
+.vault-btn {
+  
+}
