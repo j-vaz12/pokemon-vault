@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-    <div>
+    <div class="vault">
         <!-- <h1><%= user.name %></h1> -->
         <% pokemon.forEach(function(p) { %>
             <div class="pokemon-container-vault">
@@ -13,12 +13,12 @@
                     <strong>Pokemon Type:</strong>
                     <%= p.type %>
                 </div>
+                <form action="/pokemon/<%= p._id %>?_method=DELETE" method="POST">
+                    <div class="remove-btn-container">
+                        <button class="remove-btn">Remove</button>
+                    </div> 
+                </form>
             </div>
-            <form action="/pokemon/<%= p._id %>?_method=DELETE" method="POST">
-                <div class="remove-btn-container">
-                    <button class="remove-btn">Remove</button>
-                </div> 
-            </form>
             <% }); %>
     </div>
  <%- include('../partials/footer') %>

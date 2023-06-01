@@ -34,6 +34,9 @@ async function index(req, res) {
 async function getPokemon(req, res) {
     try {
         const pokemon = await fetch(`${baseUrl}/pokemon/${req.query.pokemon.toLowerCase()}`).then(res => res.json());
+        if (pokemon.species.name === '') {
+            return 
+        }
         // console.log(pokemon)
         res.render('pokemon/search', {pokemon});
     } catch (err) {
@@ -59,7 +62,6 @@ async function create(req, res) {
         req.body.vault = req.user._id
         pokemon = await Pokemon.create(req.body)
         await pokemon.save();
-        pokemon.vault.push(req.user_id);
     }
     res.redirect(`/pokemon`)
     // res.redirect(`/pokemon/${req.body.vault.user_id}`)

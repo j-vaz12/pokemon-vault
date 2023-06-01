@@ -5,15 +5,21 @@
 
        <form action="/pokemon" method="POST">
         <div class="pokemon-container">
-            <%= pokemon.species.name %>
-            <%= pokemon.types[0].type.name %>
+            <div class="poke-name"> <%=pokemon.species.name%> </div> 
+            <!-- <%= pokemon.types[0].type.name %> -->
+            <div class="poke-type"> 
+                <strong>Pokemon Type:</strong>
+                 <%=pokemon.types[0].type.name%>
+             </div>
             <input type="hidden" name="name" value=" <%=pokemon.species.name %>" />
             <input type="hidden" name="pokemonID" value=" <%=pokemon.id %>" />
             <input type="hidden" name="img" value=" <%=pokemon.sprites.other['official-artwork'].front_default %>" />
             <input type="hidden" name="type" value=" <%=pokemon.types[0].type.name %>" />
             <img class="pokeImg" src="<%= pokemon.sprites.other['official-artwork'].front_default %>" alt="Pokemon">
         </div>
-        <button>Add To Vault</button>
+        <div class="btn-vault-container">
+            <button class="vault-btn">Add To Vault</button>
+        </div> 
     </form>
     <!-- </div> -->
 
