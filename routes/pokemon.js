@@ -8,5 +8,4 @@ router.get('/', ensureLoggedIn, pokemonCtrl.index);
 router.get('/allPokeIndex', ensureLoggedIn, pokemonCtrl.getAll)
 router.delete('/:id', ensureLoggedIn, pokemonCtrl.delete);
 
-
 module.exports = router;

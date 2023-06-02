@@ -29,7 +29,6 @@ async function deleteOne(req, res) {
 async function index(req, res) {
    pokemon = await Pokemon.find({vault: req.user._id,});
    user = await User.find({user: req.user._id})
-//    user = User.name
     res.render('pokemon/index', { pokemon, user: req.user});
 }
 async function getPokemon(req, res) {
@@ -38,7 +37,6 @@ async function getPokemon(req, res) {
         if (pokemon.species.name === '') {
             return 
         }
-        // console.log(pokemon)
         res.render('pokemon/search', {pokemon});
     } catch (err) {
         console.log('err')
@@ -47,11 +45,7 @@ async function getPokemon(req, res) {
 }
 
 async function create(req, res) {
-    // console.log(req.body)
-    
-    // let pokemon = await Pokemon.exists({pokemonID: req.body.pokemonID});
     let pokemon = await Pokemon.findOne({pokemonID: req.body.pokemonID})
-    // console.log('pokemon', pokemon)
      if (pokemon) {
         console.log('already exists')
         if (!pokemon.vault.includes(req.user._id)) {
@@ -65,7 +59,5 @@ async function create(req, res) {
         await pokemon.save();
     }
     res.redirect(`/pokemon`)
-    // res.redirect(`/pokemon/${req.body.vault.user_id}`)
-    // res.redirect(`/pokemon/${req.user._id}`)
     console.log(pokemon)
 }

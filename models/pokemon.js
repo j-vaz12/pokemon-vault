@@ -23,10 +23,6 @@ const pokemonSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     }],
-    //     String,
-    // img: URL,
-    // type: String,
-    // likes: [userId]
 });
 
 

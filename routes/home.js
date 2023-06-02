@@ -10,7 +10,6 @@ router.get('/home', function(req, res, next) {
   res.render('home', { title: 'Express' });
 });
 
-
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
@@ -22,16 +21,6 @@ router.get('/auth/google', passport.authenticate(
     // prompt: "select_account"
   }
 ));
-
-// Google OAuth callback route
-// router.get('/oauth2callback', passport.authenticate(
-//   'google',
-//   {
-//     successRedirect: '/home',
-//     failureRedirect: '/'
-//   }
-// ));
-
 
 router.get('/oauth2callback', function (req, res, next) {
   const redirectTo = req.session.redirectTo;
@@ -46,21 +35,11 @@ router.get('/oauth2callback', function (req, res, next) {
   )(req, res, next);  // Call the middleware returned by passport
 });
 
-
-
-
-
-
-
-
-
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout(function() {
     res.redirect('/');
   });
 });
-
-
 
 module.exports = router;
