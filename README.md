@@ -47,7 +47,8 @@ Welcome to the Pokémon Vault web application, designed to cater to the needs of
 ## 🔥 Getting Started 
 
  [Application Link](https://pokemon-vault.herokuapp.com/)
-
+ 
+ [Trello Link](https://trello.com/b/gX5wkWNy/project-2)
 <details open>
 <summary> Quick Guide </summary>
 
