@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
-    <div class="vault">
-        <!-- <h1><%= user.name %></h1> -->
+    <div class="allPokemon">
         <% pokemon.forEach(function(p) { %>
-            <div class="pokemon-container-vault">
+            <div class="pokemon-container">
                 <div class="poke-name">
                     <%= p.name %>
                 </div>
@@ -19,6 +18,6 @@
                     </div> 
                 </form>
             </div>
-            <% }); %>
+        <% }); %>
     </div>
  <%- include('../partials/footer') %>

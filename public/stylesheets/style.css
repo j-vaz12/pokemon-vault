@@ -218,13 +218,13 @@ nav > a:last-child {
   }
 }
 
-.pokemon-container {
+/* .pokemon-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 150px;
-}
+} */
 
 .poke-name {
   margin: 10px;
@@ -236,6 +236,9 @@ nav > a:last-child {
 }
 
 .poke-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: large;
 }
 
@@ -259,17 +262,16 @@ nav > a:last-child {
   align-items: center;
 }
 
-.pokemon-container-vault {
+.pokemon-container {
   border: 1px solid black;
   width: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
   margin: 1%;
 }
-.vault {
+.allPokemon {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
