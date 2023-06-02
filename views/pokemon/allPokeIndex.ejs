@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
+<h1 class="h1-kanto">Kanto Pokémon:</h1>
 <div class="allPokemon">
     <% pokemon.forEach(function(pokemon, idx) { %>
         <div class="pokemon-container">
             <form action="/pokemon" method="POST">
                 <div class="poke-name"> <%=pokemon.species.name%> </div> 
-                <!-- <%= pokemon.types[0].type.name %> -->
                 <div class="poke-type"> 
                     <strong>Pokemon Type:</strong>
                     <%=pokemon.types[0].type.name%>

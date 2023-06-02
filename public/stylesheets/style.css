@@ -3,53 +3,72 @@
   box-sizing: border-box;
 }
 body {
-  /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  /* grid-template-rows: .1fr .1fr 1fr; */
   width: 100%;
   align-items: center;
-  /* justify-content: center; */
   align-content: center;
   margin: 0;
   background-color: rgb(255, 255, 255);
-  /* border: 10px solid black; */
-
 }
 .not-a-user {
   height: 100vh;
-  background-image: url(https://images.alphacoders.com/472/47271.jpg);
+  background-image: url(https://wallpaperset.com/w/full/2/6/a/527082.jpg);
   background-size: cover;
   margin: 0;
   display: grid;
   grid-template-rows: .1fr .1fr 1fr;
-  /* background-image: url(https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/02/Pokemon-Fire-Starters-Featured-Image.jpg); */
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 #login-page {
   font-size: 50px;
-  color: black;
+  color: white;
   margin: 0;
   font-size: 50px;
   padding-left: 30px;
   padding-right: 30px;
+  background-color: black;
+  background-color: transparent;
 }
-
-
+#h1-not-a-user {
+  color: white
+}
+.google-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 5px;
+}
+.user-img {
+  width: 30px;
+  height: auto;
+}
+.user-name {
+  margin: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
 h1 {
   display: grid;
   align-items: center;
   justify-content: center;
-  /* color: black; */
   font-size:30px;
-  /* margin: 0; */
   margin-top: 120px;
   font-size: 4vmin;
   color: black;
 }
-
+.h1-vault {
+  color: red;
+  margin-top: 100px;
+}
+.h1-kanto {
+  color: red;
+  margin-top: 10px;
+}
 a {
   color: #00B7FF;
 }
@@ -64,13 +83,7 @@ a {
   align-items: center;
   height: 34px;
   grid-row-end: 3;
-  /* grid-row-end: 3; */
 }
-/* p {
-  font-size: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
-} */
 
 nav {
   width: 100%;
@@ -79,10 +92,13 @@ nav {
   align-items: center;
   height: 50px;
   background-color: red;
+  padding: 20px;
 }
 
 nav > a:hover {
   color: white;
+  border: 2px solid black;
+  padding: 5px;
 }
 
 nav > a {
@@ -90,10 +106,11 @@ nav > a {
   margin: 10px;
   color: black;
   text-decoration: none;
+  margin: 0px 20px;
 }
 
 nav > a:last-child {
-  margin-left: auto;
+  margin-left: 1px;
 }
 
 .pokemon-search {
@@ -110,8 +127,8 @@ nav > a:last-child {
   border: 2px solid #e0e0e0;
   border-right: none;
   border-radius: 5px 0 0 5px;
-  width: 400px; /* Adjust the width as desired */
-  text-align: left; /* Add this line to align text to the left */
+  width: 400px; 
+  text-align: left; 
 }
 
 .pokemon-button {
@@ -134,7 +151,6 @@ nav > a:last-child {
   justify-content: center;
   align-items: center;
   margin-top: 250px;
-  /* height: 100vh; */
 }
 .groudon {
   position: relative;
@@ -218,14 +234,6 @@ nav > a:last-child {
   }
 }
 
-/* .pokemon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 150px;
-} */
-
 .poke-name {
   margin: 10px;
   display: flex;
@@ -255,6 +263,10 @@ nav > a:last-child {
   transition: all 0.3s ease;
 }
 
+.vault-btn:hover {
+  background-color: green;
+}
+
 .btn-vault-container {
   margin-top: 50px;
   display: flex;
@@ -263,7 +275,7 @@ nav > a:last-child {
 }
 
 .pokemon-container {
-  border: 1px solid black;
+  border: 5px solid black;
   width: 600px;
   display: flex;
   align-items: center;

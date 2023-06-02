@@ -27,9 +27,10 @@ async function deleteOne(req, res) {
 }
 
 async function index(req, res) {
-   pokemon = await Pokemon.find({vault: req.user._id});
+   pokemon = await Pokemon.find({vault: req.user._id,});
+   user = await User.find({user: req.user._id})
 //    user = User.name
-    res.render('pokemon/index', { pokemon });
+    res.render('pokemon/index', { pokemon, user: req.user});
 }
 async function getPokemon(req, res) {
     try {
